@@ -19,4 +19,12 @@ class MainActivity : BaseTrackerActivity() {
     override fun getStepAmount(): Int {
         return 25
     }
+
+    override fun getGoalMinutes(): Int {
+        return 120
+    }
+
+    override fun getMotivationText(): String {
+        return "Small steps, big brain."
+    }
 }

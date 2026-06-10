@@ -11,8 +11,10 @@ class MainActivity : BaseTrackerActivity() {
     override fun getTrackerSubtitle() =
         "Push harder every session"
 
-    override fun getTrackerIcon() =
-        "🔥"
+//    override fun getTrackerIcon() =
+//        "🔥"
+    override fun getTrackerIconRes() =
+        R.drawable.fire
 
     override fun getStepAmount() =
         10

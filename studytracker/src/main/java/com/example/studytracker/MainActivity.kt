@@ -12,8 +12,8 @@ class MainActivity : BaseTrackerActivity() {
     override fun getTrackerSubtitle() =
         "Plan focus sessions and mindful breaks"
 
-    override fun getTrackerIcon() = "📚"
-
+//    override fun getTrackerIcon() = "📚"
+    override fun getTrackerIconRes() = R.drawable.stack_of_books
     override fun getStepAmount() = 25
 
     override fun getGoalMinutes() = 120

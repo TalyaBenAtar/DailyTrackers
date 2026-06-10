@@ -35,7 +35,8 @@ abstract class BaseTrackerActivity : AppCompatActivity() {
 
     abstract fun getTrackerTitle(): String
     abstract fun getTrackerSubtitle(): String
-    abstract fun getTrackerIcon(): String
+//    abstract fun getTrackerIcon(): String
+    abstract fun getTrackerIconRes(): Int
     abstract fun getStepAmount(): Int
     abstract fun getGoalMinutes(): Int
     abstract fun getMotivationText(): String
@@ -70,7 +71,8 @@ abstract class BaseTrackerActivity : AppCompatActivity() {
 
         val txtTitle: TextView = findViewById(R.id.txtTitle)
         val txtSubtitle: TextView = findViewById(R.id.txtSubtitle)
-        val txtIcon: TextView = findViewById(R.id.txtIcon)
+//        val txtIcon: TextView = findViewById(R.id.txtIcon)
+        val imgIcon = findViewById<androidx.appcompat.widget.AppCompatImageView>(R.id.imgIcon)
 
         txtMinutes = findViewById(R.id.txtMinutes)
         txtGoal = findViewById(R.id.txtGoal)
@@ -93,7 +95,8 @@ abstract class BaseTrackerActivity : AppCompatActivity() {
 
         txtTitle.text = getTrackerTitle()
         txtSubtitle.text = getTrackerSubtitle()
-        txtIcon.text = getTrackerIcon()
+//        txtIcon.text = getTrackerIcon()
+        imgIcon.setImageResource(getTrackerIconRes())
         txtMotivation.text = getMotivationText()
 
         edtGoal.setText(dailyGoalMinutes.toString())

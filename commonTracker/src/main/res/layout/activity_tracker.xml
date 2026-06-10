@@ -24,12 +24,18 @@
             android:orientation="vertical"
             android:padding="28dp">
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/txtIcon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="⭐"
-                android:textSize="58sp" />
+<!--            <com.google.android.material.textview.MaterialTextView-->
+<!--                android:id="@+id/txtIcon"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="⭐"-->
+<!--                android:textSize="58sp" />-->
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgIcon"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:scaleType="fitCenter" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/txtTitle"

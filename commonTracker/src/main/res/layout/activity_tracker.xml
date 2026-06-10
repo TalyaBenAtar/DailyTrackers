@@ -1,106 +1,226 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/main"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F7F4FA"
-    android:gravity="center"
-    android:orientation="vertical"
-    android:padding="28dp">
+    android:background="#F3EFFF"
+    android:fillViewport="true">
 
     <androidx.appcompat.widget.LinearLayoutCompat
-        android:id="@+id/cardContainer"
+        android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#FFFFFF"
-        android:elevation="8dp"
-        android:gravity="center"
+        android:gravity="center_horizontal"
         android:orientation="vertical"
-        android:padding="28dp">
+        android:padding="24dp">
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/txtIcon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="⭐"
-            android:textSize="56sp" />
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/txtTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:gravity="center"
-            android:text="Tracker"
-            android:textSize="34sp"
-            android:textStyle="bold" />
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/txtSubtitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
-            android:gravity="center"
-            android:text="Track your progress"
-            android:textSize="17sp" />
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/txtMinutes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="34dp"
-            android:text="0 minutes"
-            android:textSize="40sp"
-            android:textStyle="bold" />
-
-        <ProgressBar
-            android:id="@+id/progressGoal"
-            style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="match_parent"
-            android:layout_height="14dp"
-            android:layout_marginTop="18dp"
-            android:max="100"
-            android:progress="0" />
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/txtGoal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="0 / 100 minutes"
-            android:textSize="15sp" />
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/txtMotivation"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="18dp"
-            android:gravity="center"
-            android:text="You got this!"
-            android:textSize="16sp"
-            android:textStyle="italic" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnAdd"
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/cardContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="28dp"
-            android:text="+ 5 minutes" />
+            android:background="@drawable/bg_card"
+            android:elevation="10dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="28dp">
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnRemove"
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txtIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⭐"
+                android:textSize="58sp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txtTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="Tracker"
+                android:textColor="#231942"
+                android:textSize="32sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txtSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:gravity="center"
+                android:text="Track your progress"
+                android:textColor="#6D6875"
+                android:textSize="16sp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txtMinutes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:text="0 minutes"
+                android:textColor="#5E35B1"
+                android:textSize="42sp"
+                android:textStyle="bold" />
+
+            <ProgressBar
+                android:id="@+id/progressGoal"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="14dp"
+                android:layout_marginTop="18dp"
+                android:max="100"
+                android:progress="0" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txtGoal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="0 / 100 minutes"
+                android:textColor="#6D6875"
+                android:textSize="15sp" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/edtGoal"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_sessions_card"
+                    android:gravity="center"
+                    android:hint="Daily Goal"
+                    android:inputType="number"
+                    android:padding="8dp"
+                    android:textColor="#231942"
+                    android:textColorHint="#8D99AE" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnSetGoal"
+                    android:layout_width="104dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bg_button"
+                    android:gravity="center"
+                    android:text="Set"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txtMotivation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:gravity="center"
+                android:text="You got this!"
+                android:textColor="#6D6875"
+                android:textSize="16sp"
+                android:textStyle="italic" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txtExtraInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="Extra info"
+                android:textColor="#231942"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSessionType"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_button"
+                android:gravity="center"
+                android:text="Current Session"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnRemove"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_button"
+                    android:gravity="center"
+                    android:text="- 5"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnAdd"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_button"
+                    android:gravity="center"
+                    android:text="+ 5"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSaveSession"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_button"
+                android:gravity="center"
+                android:text="Save Session"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnReset"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_button"
+                android:gravity="center"
+                android:text="Reset Current Session"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txtSessionsTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:text="Saved Sessions"
+            android:textColor="#231942"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txtSessions"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="- 5 minutes" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnReset"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Reset" />
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_sessions_card"
+            android:elevation="6dp"
+            android:padding="18dp"
+            android:text="No sessions yet"
+            android:textColor="#231942"
+            android:textSize="16sp" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
-
-</androidx.appcompat.widget.LinearLayoutCompat>
+</ScrollView>

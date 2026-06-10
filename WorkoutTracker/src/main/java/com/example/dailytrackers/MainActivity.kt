@@ -1,30 +1,79 @@
 package com.example.dailytrackers
 
+import android.graphics.Color
 import com.example.commontracker.BaseTrackerActivity
 
 class MainActivity : BaseTrackerActivity() {
 
-    override fun getTrackerTitle(): String {
-        return "Workout Tracker"
+    override fun getTrackerTitle() =
+        "Workout Tracker"
+
+    override fun getTrackerSubtitle() =
+        "Push harder every session"
+
+    override fun getTrackerIcon() =
+        "🔥"
+
+    override fun getStepAmount() =
+        10
+
+    override fun getGoalMinutes() =
+        60
+
+    override fun getMotivationText() =
+        "No excuses. Just progress."
+
+    override fun getPrimaryColor() =
+        Color.parseColor("#E63946")
+
+    override fun getBackgroundColor() =
+        Color.parseColor("#FFF6F0")
+
+    override fun getCardColor() =
+        Color.parseColor("#FFF0E6")
+
+    override fun getCardStrokeColor() =
+        Color.parseColor("#FF7A45")
+
+    override fun getHighlightColor() =
+        Color.parseColor("#E63946")
+
+    override fun getSecondaryCardColor() =
+        Color.parseColor("#FFF0E6")
+
+    override fun getSecondaryCardStrokeColor() =
+        Color.parseColor("#FFB088")
+
+    override fun getCurrentSessionName(): String {
+        return when {
+            minutes < 20 ->
+                "🔥 Warmup"
+
+            minutes < 50 ->
+                "💪 Active Workout"
+
+            else ->
+                "👑 Beast Mode"
+        }
     }
 
-    override fun getTrackerSubtitle(): String {
-        return "Track your workout time"
-    }
+    override fun getExtraInfoText(
+        currentMinutes: Int,
+        totalMinutes: Int
+    ): String {
 
-    override fun getTrackerIcon(): String {
-        return "💪"
-    }
+        return when {
+            currentMinutes == 0 ->
+                "Ready to train 🔥"
 
-    override fun getStepAmount(): Int {
-        return 10
-    }
+            currentMinutes < 20 ->
+                "Status: Warmup 🔥"
 
-    override fun getGoalMinutes(): Int {
-        return 60
-    }
+            currentMinutes < 50 ->
+                "Status: Active Workout 💪"
 
-    override fun getMotivationText(): String {
-        return "Stronger every session."
+            else ->
+                "Status: Beast Mode 👑"
+        }
     }
 }

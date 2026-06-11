@@ -39,7 +39,6 @@ The **CommonTracker** module contains all shared functionality used by both appl
 - Shared user interface
 - Goal tracking system
 - Session management
-- Progress tracking
 - Session history
 - Shared utility extensions
 - Theme customization support
@@ -57,7 +56,6 @@ StudyTracker helps users organize study sessions and breaks throughout the day.
 - 📚 Study Mode
 - ☕ Break Mode
 - Daily Study Goal
-- Progress Tracking
 - Session History
 - Focus Block Counter
 - Custom Purple Theme
@@ -115,7 +113,6 @@ WorkoutTracker helps users monitor workout progress and training sessions.
 
 - Daily Workout Goal
 - Session History
-- Progress Tracking
 - Dynamic Workout Status
 - Custom Fire Theme
 - Goal Achievement Tracking

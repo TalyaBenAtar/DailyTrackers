@@ -102,7 +102,7 @@ Break sessions are recorded in the session history but **do not count toward the
 
 ## 🎥 Demo Video
 
-https://github.com/user-attachments/assets/9b26150a-f7c4-464a-833a-188849d9755b
+https://github.com/user-attachments/assets/ae5db02e-1d0c-47bd-b529-a749636e7eaa
 
 
 ---
@@ -161,7 +161,7 @@ WorkoutTracker helps users monitor workout progress and training sessions.
 
 ## 🎥 Demo Video
 
-https://github.com/user-attachments/assets/ba705078-135a-4c16-b595-3176f97ca1a6
+https://github.com/user-attachments/assets/281320e3-cca6-4c8b-addc-0758bb1a8f21
 
 
 ---

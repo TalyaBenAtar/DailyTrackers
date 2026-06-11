@@ -1,6 +1,5 @@
 package com.example.studytracker
 
-import android.graphics.Color
 import com.example.commontracker.BaseTrackerActivity
 
 class MainActivity : BaseTrackerActivity() {
@@ -12,8 +11,8 @@ class MainActivity : BaseTrackerActivity() {
     override fun getTrackerSubtitle() =
         "Plan focus sessions and mindful breaks"
 
-//    override fun getTrackerIcon() = "📚"
     override fun getTrackerIconRes() = R.drawable.stack_of_books
+
     override fun getStepAmount() = 25
 
     override fun getGoalMinutes() = 120
@@ -21,26 +20,27 @@ class MainActivity : BaseTrackerActivity() {
     override fun getMotivationText() =
         "Focus now, future you says thanks."
 
-    override fun getPrimaryColor() =
-        Color.parseColor("#8B5CF6")
 
-    override fun getBackgroundColor() =
-        Color.parseColor("#F8F5FF")
+override fun getPrimaryColorRes() =
+    R.color.primary_purple
 
-    override fun getCardColor() =
-        Color.parseColor("#EEE7FF")
+    override fun getBackgroundColorRes() =
+        R.color.background_purple
 
-    override fun getCardStrokeColor() =
-        Color.parseColor("#D6C7FF")
+    override fun getCardColorRes() =
+        R.color.card_purple
 
-    override fun getHighlightColor() =
-        Color.parseColor("#6D28D9")
+    override fun getCardStrokeColorRes() =
+        R.color.card_purple_border
 
-    override fun getSecondaryCardColor() =
-        Color.parseColor("#EEE7FF")
+    override fun getHighlightColorRes() =
+        R.color.highlight_purple
 
-    override fun getSecondaryCardStrokeColor() =
-        Color.parseColor("#D6C7FF")
+    override fun getSecondaryCardColorRes() =
+        R.color.card_purple
+
+    override fun getSecondaryCardStrokeColorRes() =
+        R.color.card_purple_border
 
     override fun getCurrentSessionName(): String {
         return if (isStudySession) {

@@ -10,46 +10,40 @@ import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 
 abstract class BaseTrackerActivity : AppCompatActivity() {
 
-
     protected var minutes = 0
-
     private var savedTotalMinutes = 0
     private var dailyGoalMinutes = 0
     private val savedSessions = mutableListOf<String>()
-
     private lateinit var main: View
     private lateinit var cardContainer: View
-
     private lateinit var txtMinutes: TextView
     private lateinit var txtGoal: TextView
     private lateinit var txtMotivation: TextView
     private lateinit var txtExtraInfo: TextView
     private lateinit var txtSessions: TextView
-
     private lateinit var edtGoal: EditText
     private lateinit var progressGoal: ProgressBar
     private lateinit var btnSessionType: Button
 
     abstract fun getTrackerTitle(): String
     abstract fun getTrackerSubtitle(): String
-//    abstract fun getTrackerIcon(): String
     abstract fun getTrackerIconRes(): Int
     abstract fun getStepAmount(): Int
     abstract fun getGoalMinutes(): Int
     abstract fun getMotivationText(): String
+    abstract fun getPrimaryColorRes(): Int
+    abstract fun getBackgroundColorRes(): Int
 
-    abstract fun getPrimaryColor(): Int
-    abstract fun getBackgroundColor(): Int
+    abstract fun getCardColorRes(): Int
+    abstract fun getCardStrokeColorRes(): Int
 
-    abstract fun getCardColor(): Int
-    abstract fun getCardStrokeColor(): Int
-
-    abstract fun getHighlightColor(): Int
-    abstract fun getSecondaryCardColor(): Int
-    abstract fun getSecondaryCardStrokeColor(): Int
+    abstract fun getHighlightColorRes(): Int
+    abstract fun getSecondaryCardColorRes(): Int
+    abstract fun getSecondaryCardStrokeColorRes(): Int
 
     abstract fun getCurrentSessionName(): String
     abstract fun getExtraInfoText(currentMinutes: Int, totalMinutes: Int): String
@@ -59,6 +53,7 @@ abstract class BaseTrackerActivity : AppCompatActivity() {
     open fun onSessionTypeButtonClicked() {}
     open fun shouldCountSessionTowardsGoal(): Boolean = true
     open fun shouldCurrentSessionCountTowardsGoal(): Boolean = true
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -71,7 +66,6 @@ abstract class BaseTrackerActivity : AppCompatActivity() {
 
         val txtTitle: TextView = findViewById(R.id.txtTitle)
         val txtSubtitle: TextView = findViewById(R.id.txtSubtitle)
-//        val txtIcon: TextView = findViewById(R.id.txtIcon)
         val imgIcon = findViewById<androidx.appcompat.widget.AppCompatImageView>(R.id.imgIcon)
 
         txtMinutes = findViewById(R.id.txtMinutes)
@@ -95,7 +89,6 @@ abstract class BaseTrackerActivity : AppCompatActivity() {
 
         txtTitle.text = getTrackerTitle()
         txtSubtitle.text = getTrackerSubtitle()
-//        txtIcon.text = getTrackerIcon()
         imgIcon.setImageResource(getTrackerIconRes())
         txtMotivation.text = getMotivationText()
 
@@ -167,7 +160,6 @@ abstract class BaseTrackerActivity : AppCompatActivity() {
             "${getCurrentSessionName()}: ${minutes.toMinutesText()}"
         )
 
-//        savedTotalMinutes += minutes
         if (shouldCountSessionTowardsGoal()) {
             savedTotalMinutes += minutes
         }
@@ -213,48 +205,67 @@ abstract class BaseTrackerActivity : AppCompatActivity() {
             }
     }
 
-    private fun applyColors(vararg buttons: Button) {
+private fun applyColors(vararg buttons: Button) {
 
-        val primaryColor = getPrimaryColor()
+    val primaryColor =
+        ContextCompat.getColor(this, getPrimaryColorRes())
 
-        main.setBackgroundColor(getBackgroundColor())
+    val backgroundColor =
+        ContextCompat.getColor(this, getBackgroundColorRes())
 
-        progressGoal.progressTintList =
+    val cardColor =
+        ContextCompat.getColor(this, getCardColorRes())
+
+    val cardStrokeColor =
+        ContextCompat.getColor(this, getCardStrokeColorRes())
+
+    val highlightColor =
+        ContextCompat.getColor(this, getHighlightColorRes())
+
+    val secondaryCardColor =
+        ContextCompat.getColor(this, getSecondaryCardColorRes())
+
+    val secondaryCardStrokeColor =
+        ContextCompat.getColor(this, getSecondaryCardStrokeColorRes())
+
+    main.setBackgroundColor(backgroundColor)
+
+    progressGoal.progressTintList =
+        ColorStateList.valueOf(primaryColor)
+
+    txtMinutes.setTextColor(highlightColor)
+
+    buttons.forEach {
+        it.backgroundTintList =
             ColorStateList.valueOf(primaryColor)
 
-        txtMinutes.setTextColor(getHighlightColor())
-
-        buttons.forEach {
-            it.backgroundTintList =
-                ColorStateList.valueOf(primaryColor)
-
-            it.setTextColor(Color.WHITE)
-        }
-
-        val cardBackground = GradientDrawable()
-        cardBackground.setColor(getCardColor())
-        cardBackground.cornerRadius =
-            28f * resources.displayMetrics.density
-        cardBackground.setStroke(
-            2,
-            getCardStrokeColor()
-        )
-
-        cardContainer.background = cardBackground
-
-        val sessionBackground = GradientDrawable()
-        sessionBackground.setColor(
-            getSecondaryCardColor()
-        )
-        sessionBackground.cornerRadius =
-            22f * resources.displayMetrics.density
-        sessionBackground.setStroke(
-            2,
-            getSecondaryCardStrokeColor()
-        )
-
-        txtSessions.background = sessionBackground
+        it.setTextColor(Color.WHITE)
     }
+
+    val cardBackground = GradientDrawable()
+    cardBackground.setColor(cardColor)
+    cardBackground.cornerRadius =
+        28f * resources.displayMetrics.density
+    cardBackground.setStroke(
+        2,
+        cardStrokeColor
+    )
+
+    cardContainer.background = cardBackground
+
+    val sessionBackground = GradientDrawable()
+    sessionBackground.setColor(
+        secondaryCardColor
+    )
+    sessionBackground.cornerRadius =
+        22f * resources.displayMetrics.density
+    sessionBackground.setStroke(
+        2,
+        secondaryCardStrokeColor
+    )
+
+    txtSessions.background = sessionBackground
+}
 
 
 }

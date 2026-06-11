@@ -1,6 +1,5 @@
 package com.example.dailytrackers
 
-import android.graphics.Color
 import com.example.commontracker.BaseTrackerActivity
 
 class MainActivity : BaseTrackerActivity() {
@@ -11,8 +10,6 @@ class MainActivity : BaseTrackerActivity() {
     override fun getTrackerSubtitle() =
         "Push harder every session"
 
-//    override fun getTrackerIcon() =
-//        "🔥"
     override fun getTrackerIconRes() =
         R.drawable.fire
 
@@ -25,26 +22,26 @@ class MainActivity : BaseTrackerActivity() {
     override fun getMotivationText() =
         "No excuses. Just progress."
 
-    override fun getPrimaryColor() =
-        Color.parseColor("#E63946")
+    override fun getPrimaryColorRes() =
+        R.color.primary_red
 
-    override fun getBackgroundColor() =
-        Color.parseColor("#FFF6F0")
+    override fun getBackgroundColorRes() =
+        R.color.background_white
 
-    override fun getCardColor() =
-        Color.parseColor("#FFF0E6")
+    override fun getCardColorRes() =
+        R.color.card_white
 
-    override fun getCardStrokeColor() =
-        Color.parseColor("#FF7A45")
+    override fun getCardStrokeColorRes() =
+        R.color.card_orange
 
-    override fun getHighlightColor() =
-        Color.parseColor("#E63946")
+    override fun getHighlightColorRes() =
+        R.color.primary_red
 
-    override fun getSecondaryCardColor() =
-        Color.parseColor("#FFF0E6")
+    override fun getSecondaryCardColorRes() =
+        R.color.card_white
 
-    override fun getSecondaryCardStrokeColor() =
-        Color.parseColor("#FFB088")
+    override fun getSecondaryCardStrokeColorRes() =
+        R.color.card_orange_second
 
     override fun getCurrentSessionName(): String {
         return when {

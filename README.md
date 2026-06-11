@@ -102,11 +102,8 @@ Break sessions are recorded in the session history but **do not count toward the
 
 ## 🎥 Demo Video
 
-> Add study tracker demo video here
+https://github.com/user-attachments/assets/9b26150a-f7c4-464a-833a-188849d9755b
 
-```markdown
-[Study Tracker Demo](videos/study_tracker_demo.mp4)
-```
 
 ---
 
@@ -164,11 +161,8 @@ WorkoutTracker helps users monitor workout progress and training sessions.
 
 ## 🎥 Demo Video
 
-> Add workout tracker demo video here
+https://github.com/user-attachments/assets/ba705078-135a-4c16-b595-3176f97ca1a6
 
-```markdown
-[Workout Tracker Demo](videos/workout_tracker_demo.mp4)
-```
 
 ---
 

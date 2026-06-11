@@ -80,11 +80,23 @@ Break sessions are recorded in the session history but **do not count toward the
 
 ## 📸 Screenshots
 
-> Add screenshots here
+<table>
+  <tr>
+    <td align="center">
+      <img width="351" height="791" alt="Study_Tracker" src="https://github.com/user-attachments/assets/10fd669c-db87-4567-b5e7-bae24dcbdd09" />
+      No Data
+    </td>
+    <td align="center">
+      <img width="311" height="691" alt="Study_Tracker" src="https://github.com/user-attachments/assets/ed65656f-1b36-49a1-b0f2-29d728b1338a" />
+      Data Put In
+    </td>
+    <td align="center">
+        <img width="311" height="691" alt="Study_Tracker" src="https://github.com/user-attachments/assets/ee41864b-0f4e-4a86-8e80-333ec6665810" />
+      Session Saved
+    </td>
+  </tr>
+</table>
 
-```markdown
-![Study Tracker Screenshot](images/study_tracker.png)
-```
 
 ---
 
@@ -131,11 +143,22 @@ WorkoutTracker helps users monitor workout progress and training sessions.
 
 ## 📸 Screenshots
 
-> Add screenshots here
-
-```markdown
-![Workout Tracker Screenshot](images/workout_tracker.png)
-```
+<table>
+  <tr>
+    <td align="center">
+      <img width="311" height="691" alt="Screenshot_20260611_142112_Workout_Tracker" src="https://github.com/user-attachments/assets/e1726ab1-05ae-412a-abc0-2c0e3008c30c" />
+      No Data
+    </td>
+    <td align="center">
+      <img width="311" height="691" alt="Screenshot_20260611_142127_Workout_Tracker" src="https://github.com/user-attachments/assets/c17ae81f-c582-455c-8aeb-960c9ab760ba" />
+      Data Put In
+    </td>
+    <td align="center">
+        <img width="311" height="691" alt="Screenshot_20260611_142134_Workout_Tracker" src="https://github.com/user-attachments/assets/25b5deaf-bc43-4fc5-ae73-3429d3e9637d" />
+      Session Saved
+    </td>
+  </tr>
+</table>
 
 ---
 
